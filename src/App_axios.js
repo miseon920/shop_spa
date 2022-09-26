@@ -5,28 +5,19 @@ import Detail from "./pages/Detail";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function App() {
+function App_axios() {
   const [con, setCon] = useState();
   const [loding, setLoding] = useState(false);
+  const url = process.env.PUBLIC_URL + "/data.json";
 
   useEffect(() => {
     setLoding(false);
-    const url = "https://desipossa.github.io/shop_cra/assets/data.json";
     const getData = async () => {
       //비동기,promise을 생성함
       const res = await axios.get(url);
       //axios 가 url을 가져오는것을 기다림
-      const newdata = res.data.slice(0, 50).map((con) => {
-        return {
-          id: con.id,
-          name: con.name,
-          des: con.description,
-        };
-      });
-      setCon(newdata);
-      //setCon(res.data);
+      setCon(res.data);
       setLoding(true);
-      console.log(res.data);
     };
     getData(); //실행
     // axios(url).then((res) => {
@@ -43,20 +34,17 @@ function App() {
         {/* {console.log(con)} */}
         {loding ? (
           <div>
+            {con.map((it, idex) => {
+              return (
+                <div key={it.id}>
+                  <Link to={`list/${it.id}`}>
+                    {/* <img src={`${process.env.PUBLIC_URL}${it.img}`} alt="" /> */}
+                    {it.name}
+                  </Link>
+                </div>
+              );
+            })}
             <Routes>
-              <Route
-                path="/"
-                element={con.map((it, idex) => {
-                  return (
-                    <div key={it.id}>
-                      <Link to={`list/${it.id}`}>
-                        {/* <img src={`${process.env.PUBLIC_URL}${it.img}`} alt="" /> */}
-                        {it.name}
-                      </Link>
-                    </div>
-                  );
-                })}
-              ></Route>
               <Route path="/list/:num" element={<Detail list={con} />}></Route>
             </Routes>
           </div>
@@ -68,7 +56,7 @@ function App() {
   );
 }
 
-export default App;
+export default App_axios;
 
 /*json 파일의 경우 import 되지않는다
 #외부 데이터를 가져오는 법

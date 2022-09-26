@@ -25,6 +25,9 @@ const Detail = ({ list }) => {
     background: "#fff",
     margin: "0 5px",
   };
+  const handleError = (e) => {
+    e.target.src = process.env.PUBLIC_URL + "/assets/images/main_m01.jpg";
+  };
   return (
     // <ul>
     //   {/* {num} */}
@@ -35,14 +38,15 @@ const Detail = ({ list }) => {
     //   <li>{match.des}</li> */}
     // </ul>
     <>
-      <img src={`${process.env.PUBLIC_URL}${match.img}`} alt="" />
+      <img src={match.image_link} alt="" onError={handleError} />
       <div>{match.name}</div>
-      <div>{match.des.substring(0, 2)}</div>
-      <div>{match.con}</div>
+      <div>{match.des.substring(0, 30)}</div>
       <div>{match.price}</div>
       <ul>
-        {match.color.map((color) => (
-          <li style={{ ...liStyle, background: color }}>color</li>
+        {match.product_colors.map((color, idx) => (
+          <li key={idx} style={{ ...liStyle, background: color.hex_value }}>
+            color
+          </li>
         ))}
       </ul>
     </>
