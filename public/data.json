@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "01제품이름",
+    "des": "01제품설명",
+    "img": "/assets/images/main_m01.jpg",
+    "color": ["#ddd", "#ff0", "#369", "#333"],
+    "price": 2000
+  },
+  {
+    "id": 2,
+    "name": "02제품이름",
+    "des": "02제품설명",
+    "img": "/assets/images/main_m02.jpg",
+    "color": ["#ddd", "#333"],
+    "price": 3000
+  },
+  {
+    "id": 3,
+    "name": "03제품이름",
+    "des": "03제품설명",
+    "img": "/assets/images/main_m03.jpg",
+    "color": ["#ff0", "#333"],
+    "price": 5000
+  }
+]

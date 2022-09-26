@@ -4,10 +4,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import Detail from "./pages/Detail";
 import { useEffect, useState } from "react";
 
-function App() {
+function App_fetch() {
   const [con, setCon] = useState();
   const [loding, setLoding] = useState(false);
-  const url = process.env.PUBLIC_URL + "/data.json";
   useEffect(() => {
     // fetch(url)
     //   .then((response) => response.json())
@@ -16,7 +15,7 @@ function App() {
     //   .then((response) => response.json())
     //   .then(console.log);
     setLoding(false);
-    fetch(url)
+    fetch(process.env.PUBLIC_URL + "/data.json")
       .then((res) => res.json())
       .then((res) => {
         setCon(res);
@@ -53,7 +52,7 @@ function App() {
   );
 }
 
-export default App;
+export default App_fetch;
 
 /*json 파일의 경우 import 되지않는다
 #외부 데이터를 가져오는 법
@@ -61,6 +60,4 @@ fetch
 aixos
 사용해야한다
 https://velog.io/@eunbinn/Axios-vs-Fetch
-
-https://axios-http.com/kr/docs/api_intro
 */
