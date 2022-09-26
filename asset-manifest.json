@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/shop_spa/static/css/main.31d6cfe0.css",
-    "main.js": "/shop_spa/static/js/main.03ac9418.js",
+    "main.js": "/shop_spa/static/js/main.db31eb5f.js",
     "index.html": "/shop_spa/index.html",
-    "main.03ac9418.js.map": "/shop_spa/static/js/main.03ac9418.js.map"
+    "main.db31eb5f.js.map": "/shop_spa/static/js/main.db31eb5f.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.03ac9418.js"
+    "static/js/main.db31eb5f.js"
   ]
 }
