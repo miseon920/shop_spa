@@ -21,6 +21,9 @@ function App() {
           id: con.id,
           name: con.name,
           des: con.description,
+          img: con.image_link,
+          won: con.price,
+          color: con.product_colors,
         };
       });
       setCon(newdata);

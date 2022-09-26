@@ -38,12 +38,13 @@ const Detail = ({ list }) => {
     //   <li>{match.des}</li> */}
     // </ul>
     <>
-      <img src={match.image_link} alt="" onError={handleError} />
+      <img src={match.img} alt="" onError={handleError} />
       <div>{match.name}</div>
       <div>{match.des.substring(0, 30)}</div>
-      <div>{match.price}</div>
+      <div>{match.won}</div>
+
       <ul>
-        {match.product_colors.map((color, idx) => (
+        {match.color.map((color, idx) => (
           <li key={idx} style={{ ...liStyle, background: color.hex_value }}>
             color
           </li>
